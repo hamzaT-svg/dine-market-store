@@ -6,7 +6,7 @@ const Page = () => {
   useEffect(() => {
     const deleteItems = async () => {
       try {
-        await fetch(`${process.env.BASE_URL}api/cart`, {
+        await fetch(`${process.env.BASE_URL}/api/cart`, {
           method: "DELETE",
           cache: "no-store",
           headers: {

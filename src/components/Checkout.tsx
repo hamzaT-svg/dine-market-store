@@ -23,12 +23,15 @@ const Checkout: React.FC<CheckoutProps> = ({ cart }) => {
       setIsLoading(true);
       const stripe = await stripePromise;
       // Create a Checkout Session.
-      const response: any = await fetch(`${process.env.BASE_URL}api/checkout`, {
-        method: "POST",
-        body: JSON.stringify({
-          name: "Checkout",
-        }),
-      });
+      const response: any = await fetch(
+        `${process.env.BASE_URL}/api/checkout`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            name: "Checkout",
+          }),
+        }
+      );
 
       // if (response.statusCode === 500) {
       //   console.error(response.message);

@@ -13,7 +13,7 @@ const Delete: React.FC<DeleteProps> = ({ id }) => {
   const deleteOrder = async () => {
     try {
       const res = await fetch(
-        `${process.env.BASE_URL}api/cart/${id.toString()}`,
+        `${process.env.BASE_URL}/api/cart/${id.toString()}`,
         {
           method: "DELETE",
         }
