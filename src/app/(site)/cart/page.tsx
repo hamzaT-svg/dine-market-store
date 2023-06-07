@@ -12,13 +12,16 @@ type OrdersResult = {
 
 const getOrders = async (): Promise<OrdersResult> => {
   try {
-    const res: any = await fetch(`https://dine-market-hamzatasadaq51-gmailcom.vercel.app/api/cart`, {
-      method: "GET",
-      cache: "no-store",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res: any = await fetch(
+      `https://dine-market-seven.vercel.app/api/cart`,
+      {
+        method: "GET",
+        cache: "no-store",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     if (!res.ok) {
       throw new Error("Failed to fetch the data");
     }

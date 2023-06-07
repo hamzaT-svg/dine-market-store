@@ -13,7 +13,7 @@ const Delete: React.FC<DeleteProps> = ({ id }) => {
   const deleteOrder = async () => {
     try {
       const res = await fetch(
-        `https://dine-market-hamzatasadaq51-gmailcom.vercel.app/api/cart/${id.toString()}`,
+        `https://dine-market-seven.vercel.app/api/cart/${id.toString()}`,
         {
           method: "DELETE",
         }

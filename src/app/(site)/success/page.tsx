@@ -6,16 +6,13 @@ const Page = () => {
   useEffect(() => {
     const deleteItems = async () => {
       try {
-        await fetch(
-          `https://dine-market-hamzatasadaq51-gmailcom.vercel.app/api/cart`,
-          {
-            method: "DELETE",
-            cache: "no-store",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        await fetch(`https://dine-market-seven.vercel.app/api/cart`, {
+          method: "DELETE",
+          cache: "no-store",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
       } catch (err) {
         throw err;
       }

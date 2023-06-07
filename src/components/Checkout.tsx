@@ -24,7 +24,7 @@ const Checkout: React.FC<CheckoutProps> = ({ cart }) => {
       const stripe = await stripePromise;
       // Create a Checkout Session.
       const response: any = await fetch(
-        `https://dine-market-hamzatasadaq51-gmailcom.vercel.app/api/checkout`,
+        `https://dine-market-seven.vercel.app/api/checkout`,
         {
           method: "POST",
           body: JSON.stringify({

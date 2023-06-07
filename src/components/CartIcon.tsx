@@ -13,7 +13,7 @@ type Count = number;
 const getTotalOrders = async (): Promise<Count> => {
   try {
     const res: any = await fetch(
-      `https://dine-market-hamzatasadaq51-gmailcom.vercel.app/api/cart`,
+      `https://dine-market-seven.vercel.app/api/cart`,
       {
         method: "GET",
         cache: "no-store",
