@@ -12,15 +12,18 @@ const AddToCart: React.FC<NewOrder> = ({ name, type, price, imgSrc }) => {
   const handleAddToCart = async () => {
     try {
       setLoading(true);
-      await fetch(`${process.env.BASE_URL}/api/cart`, {
-        method: "POST",
-        body: JSON.stringify({
-          name,
-          type,
-          price,
-          imgSrc,
-        }),
-      });
+      await fetch(
+        `https://dine-market-hamzatasadaq51-gmailcom.vercel.app/api/cart`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            name,
+            type,
+            price,
+            imgSrc,
+          }),
+        }
+      );
 
       toast.success("1 Item Added To Cart");
       router.refresh();
