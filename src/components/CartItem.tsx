@@ -32,17 +32,15 @@ const CartItem: React.FC<Order> = ({ id, name, type, price, imgSrc }) => {
         <div>
           <Delete id={id} />
         </div>
-
-        <div className="flex items-center space-x-2">
+        {/* <div className="flex items-center space-x-2">
           <button className="bg-[#f1f1f1] w-10 h-10 rounded-full text-center font-semibold text-2xl">
             -
           </button>
           <h4>1</h4>
-
           <button className="border border-[#000000] w-10 h-10 rounded-full text-center font-semibold text-2xl">
             +
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
