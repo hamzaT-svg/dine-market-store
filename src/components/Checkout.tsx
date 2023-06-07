@@ -23,15 +23,12 @@ const Checkout: React.FC<CheckoutProps> = ({ cart }) => {
       setIsLoading(true);
       const stripe = await stripePromise;
       // Create a Checkout Session.
-      const response: any = await fetch(
-        `https://dine-market-seven.vercel.app/api/checkout`,
-        {
-          method: "POST",
-          body: JSON.stringify({
-            name: "Checkout",
-          }),
-        }
-      );
+      const response: any = await fetch(`http://localhost:3000/api/checkout`, {
+        method: "POST",
+        body: JSON.stringify({
+          name: "Checkout",
+        }),
+      });
 
       // if (response.statusCode === 500) {
       //   console.error(response.message);
