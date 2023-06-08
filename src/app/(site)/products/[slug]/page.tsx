@@ -8,7 +8,7 @@ import AddToCart from "@/components/AddToCart";
 export async function generateStaticParams() {
   const slugs = await getSlugs("product");
 
-  return slugs.map(({ slug }) => ({
+  return slugs?.map(({ slug }) => ({
     slug,
   }));
 }

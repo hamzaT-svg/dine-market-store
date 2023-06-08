@@ -9,7 +9,7 @@ import Products from "@/components/Products";
 export async function generateStaticParams() {
   const slugs = await getSlugs("category");
 
-  return slugs.map(({ slug }) => ({
+  return slugs?.map(({ slug }) => ({
     slug,
   }));
 }
