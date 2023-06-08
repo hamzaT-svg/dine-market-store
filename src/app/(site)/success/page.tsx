@@ -6,7 +6,7 @@ const Page = () => {
   useEffect(() => {
     const deleteItems = async () => {
       try {
-        await fetch(`http://localhost:3000/api/cart`, {
+        await fetch(`https://dine-market-rose.vercel.app/api/cart`, {
           method: "DELETE",
           cache: "no-store",
           headers: {

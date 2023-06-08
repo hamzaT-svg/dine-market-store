@@ -13,13 +13,16 @@ type Count = number;
 
 const getTotalOrders = async (): Promise<Count> => {
   try {
-    const res: any = await fetch(`http://localhost:3000/api/cart`, {
-      method: "GET",
-      cache: "no-store",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res: any = await fetch(
+      `https://dine-market-rose.vercel.app/api/cart`,
+      {
+        method: "GET",
+        cache: "no-store",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     if (!res.ok) {
       throw new Error("Failed to fetch the data");
     }
