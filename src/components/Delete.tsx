@@ -12,12 +12,9 @@ const Delete: React.FC<DeleteProps> = ({ id }) => {
   const router = useRouter();
   const deleteOrder = async () => {
     try {
-      const res = await fetch(
-        `https://dine-market-rose.vercel.app/api/cart/${id.toString()}`,
-        {
-          method: "DELETE",
-        }
-      );
+      const res = await fetch(`/api/cart/${id.toString()}`, {
+        method: "DELETE",
+      });
 
       if (!res.ok) {
         throw new Error("Failed to fetch the data");
