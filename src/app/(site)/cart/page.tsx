@@ -12,7 +12,7 @@ type OrdersResult = {
 
 const getOrders = async (): Promise<OrdersResult> => {
   try {
-    const res: any = await fetch(`/api/cart`, {
+    const res: any = await fetch(`https://dine-market-seven.vercel.app/api/cart`, {
       method: "GET",
       cache: "no-store",
       headers: {
