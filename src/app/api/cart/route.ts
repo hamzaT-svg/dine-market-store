@@ -39,9 +39,7 @@ export async function POST(request: NextRequest) {
 
 export async function DELETE() {
     try {
-
         await db.delete(carts);
-
         return NextResponse.json({ message: "Success" });
 
     } catch (error) {
