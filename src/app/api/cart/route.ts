@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
             return NextResponse.json({ message: "Success", orders });
         }
     } catch (error) {
-        return NextResponse.json({ message: (error as { message: string; }).message });
+        return NextResponse.json({ message: error });
     }
 }
 
