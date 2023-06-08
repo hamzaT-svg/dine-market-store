@@ -12,7 +12,7 @@ const AddToCart: React.FC<NewOrder> = ({ name, type, price, imgSrc }) => {
   const handleAddToCart = async () => {
     try {
       setLoading(true);
-      await fetch(`http://localhost:3000/api/cart`, {
+      await fetch(`/api/cart`, {
         method: "POST",
         body: JSON.stringify({
           name,

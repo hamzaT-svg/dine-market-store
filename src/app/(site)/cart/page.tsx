@@ -12,16 +12,13 @@ type OrdersResult = {
 
 const getOrders = async (): Promise<OrdersResult> => {
   try {
-    const res: any = await fetch(
-      `http://localhost:3000/api/cart`,
-      {
-        method: "GET",
-        cache: "no-store",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const res: any = await fetch(`/api/cart`, {
+      method: "GET",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     if (!res.ok) {
       throw new Error("Failed to fetch the data");
     }

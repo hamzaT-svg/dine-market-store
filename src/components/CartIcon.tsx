@@ -12,7 +12,7 @@ type Count = number;
 
 const getTotalOrders = async (): Promise<Count> => {
   try {
-    const res: any = await fetch(`http://localhost:3000/api/cart`, {
+    const res: any = await fetch(`/api/cart`, {
       method: "GET",
       cache: "no-store",
       headers: {
