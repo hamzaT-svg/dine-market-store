@@ -1,8 +1,8 @@
 "use client";
-import { Order } from "@/lib/drizzle";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { MdDeleteOutline as DeleteButton } from "react-icons/md";
+import { useState } from "react";
 
 interface DeleteProps {
   id: number;
@@ -10,10 +10,12 @@ interface DeleteProps {
 
 const Delete: React.FC<DeleteProps> = ({ id }) => {
   const router = useRouter();
+  const [loading, setLoading] = useState<boolean>(false);
   const deleteOrder = async () => {
     try {
+      setLoading(true);
       const res = await fetch(
-        `https://dine-market-rose.vercel.app/api/cart/${id.toString()}`,
+        `http://localhost:3000/api/cart/${id.toString()}`,
         {
           method: "DELETE",
         }
@@ -27,11 +29,14 @@ const Delete: React.FC<DeleteProps> = ({ id }) => {
     } catch (err) {
       toast.error("Some thing Wrong");
       throw err;
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <DeleteButton
+      className={`${loading && "opacity-50"} cursor-pointer`}
       onClick={() => {
         deleteOrder();
       }}

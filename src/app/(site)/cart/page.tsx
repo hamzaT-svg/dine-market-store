@@ -12,7 +12,7 @@ type OrdersResult = {
 
 const getOrders = async (): Promise<OrdersResult> => {
   try {
-    const res: any = await fetch(`https://dine-market-rose.vercel.app/api/cart`, {
+    const res: any = await fetch(`http://localhost:3000/api/cart`, {
       method: "GET",
       cache: "no-store",
       headers: {
@@ -32,9 +32,7 @@ const getOrders = async (): Promise<OrdersResult> => {
 const page = async () => {
   const result = await getOrders();
   const { orders } = result;
-
   const totalProducts = orders.length;
-
   const subTotal: number = orders.reduce(function (acc, obj) {
     return acc + obj.price;
   }, 0);

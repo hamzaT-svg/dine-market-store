@@ -30,7 +30,13 @@ const Header = () => {
             />
           </div>
           <div className="hidden lg:block">
+            {/* <Suspense
+              fallback={
+                <div className="bg-[#F1F1F1] relative w-11 h-11 rounded-full flex items-center justify-center animate-pulse" />
+              }
+            > */}
             <CartIcon />
+            {/* </Suspense> */}
           </div>
           <div className="lg:hidden">
             <Hamburger

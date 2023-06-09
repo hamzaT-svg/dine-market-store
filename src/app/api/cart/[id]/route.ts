@@ -12,7 +12,6 @@ export async function DELETE(request: NextRequest, { params }: {
 
     try {
         const deletedOrder = await db.delete(carts).where(eq(carts.id, parseInt(id))).returning();
-        console.log(deletedOrder);
 
         return NextResponse.json({ deletedOrder });
     } catch (error) {
