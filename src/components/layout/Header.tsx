@@ -5,6 +5,7 @@ import Container from "./Container";
 import Navbar from "../Navbar";
 import CartIcon from "../CartIcon";
 import Link from "next/link";
+import { Suspense } from "react";
 
 const Header = () => {
   return (
@@ -30,7 +31,13 @@ const Header = () => {
             />
           </div>
           <div className="hidden lg:block">
-            <CartIcon />
+            <Suspense
+              fallback={
+                <div className="bg-[#F1F1F1] relative w-11 h-11 rounded-full flex items-center justify-center animate-ping"></div>
+              }
+            >
+              <CartIcon />
+            </Suspense>
           </div>
           <div className="lg:hidden">
             <Hamburger
