@@ -27,8 +27,8 @@ export async function POST(request: NextRequest) {
                     quantity: 2
                 }
             ],
-            success_url: `http://localhost:3000/success`,
-            cancel_url: `http://localhost:3000/canceled`,
+            success_url: `https://dine-market-rose.vercel.app/success`,
+            cancel_url: `https://dine-market-rose.vercel.app/canceled`,
         };
         const session: Stripe.Checkout.Session = await stripe.checkout.sessions.create(
             params

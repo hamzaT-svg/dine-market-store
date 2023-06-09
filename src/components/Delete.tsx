@@ -15,7 +15,7 @@ const Delete: React.FC<DeleteProps> = ({ id }) => {
     try {
       setLoading(true);
       const res = await fetch(
-        `http://localhost:3000/api/cart/${id.toString()}`,
+        `https://dine-market-rose.vercel.app/api/cart/${id.toString()}`,
         {
           method: "DELETE",
         }

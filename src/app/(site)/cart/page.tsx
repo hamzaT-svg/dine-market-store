@@ -1,3 +1,4 @@
+"use client";
 import CartItem from "@/components/CartItem";
 import Container from "@/components/layout/Container";
 import { Order } from "@/lib/drizzle";
@@ -12,9 +13,9 @@ type OrdersResult = {
 
 const getOrders = async (): Promise<OrdersResult> => {
   try {
-    const res: any = await fetch(`http://localhost:3000/api/cart`, {
+    const res: any = await fetch(`https://dine-market-rose.vercel.app/api/cart`, {
       method: "GET",
-      cache: "no-store",
+      // cache: "no-store",
       headers: {
         "Content-Type": "application/json",
       },
@@ -25,14 +26,18 @@ const getOrders = async (): Promise<OrdersResult> => {
     const result: OrdersResult = await res.json();
     return result;
   } catch (err) {
+    console.log({ err });
     throw err;
   }
 };
 
-const page = async () => {
+const Page = async () => {
   const result = await getOrders();
+  // const { updateItems } = useCartItems();
   const { orders } = result;
   const totalProducts = orders.length;
+
+  // updateItems(totalProducts);
   const subTotal: number = orders.reduce(function (acc, obj) {
     return acc + obj.price;
   }, 0);
@@ -95,4 +100,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Page;
