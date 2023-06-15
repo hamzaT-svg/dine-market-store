@@ -3,6 +3,7 @@ import { Sora } from "@next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ToasterProvider } from "@/components/ToasterProvider";
+import Providers from "@/components/Provider";
 
 export const metadata = {
   title: "Dine Market",
@@ -25,9 +26,11 @@ export default function RootLayout({
     <html lang="en" className={`${sora.variable}`}>
       <body className={`min-h-screen flex flex-col font-sora`}>
         <ToasterProvider />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
