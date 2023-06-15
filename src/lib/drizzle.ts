@@ -5,13 +5,14 @@ import {
     text,
     varchar,
 } from "drizzle-orm/pg-core";
+import { InferModel } from "drizzle-orm";
+
 import { sql } from "@vercel/postgres";
 
 import { migrate } from 'drizzle-orm/node-postgres/migrator';
 
 
 import { drizzle } from "drizzle-orm/vercel-postgres";
-import { InferModel } from "drizzle-orm";
 
 export const carts = pgTable("carts", {
     id: serial("id").primaryKey(),

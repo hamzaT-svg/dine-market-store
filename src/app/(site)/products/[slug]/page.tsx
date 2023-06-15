@@ -79,10 +79,10 @@ const ProductDetailsProps = async ({
 
               <div className="flex items-center w-full space-x-3">
                 <AddToCart
-                  name={name}
-                  type={type}
-                  price={price}
-                  imgSrc={images[0]}
+                // name={name}
+                // type={type}
+                // price={price}
+                // imgSrc={images[0]}
                 />
                 <h2 className="font-bold text-2xl text-[#212121]">
                   ${price.toLocaleString()}

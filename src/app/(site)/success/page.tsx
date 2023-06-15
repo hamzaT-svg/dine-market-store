@@ -1,33 +1,9 @@
 "use client";
 import Container from "@/components/layout/Container";
-import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { toast } from "react-hot-toast";
 import Link from "next/link";
 
 const Page = () => {
-  const router = useRouter();
-
-  useEffect(() => {
-    const deleteItems = async () => {
-      try {
-        await fetch(`https://dine-market-rose.vercel.app/api/cart`, {
-          method: "DELETE",
-          cache: "no-store",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-
-        toast.success("Thanks For Choosing US.");
-        router.refresh();
-      } catch (err) {
-        throw err;
-      }
-    };
-
-    deleteItems();
-  }, [router]);
   return (
     <Container>
       <div className="flex items-end justify-center">

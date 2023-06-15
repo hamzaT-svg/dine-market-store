@@ -6,41 +6,15 @@ import { AiOutlineShopping as Bag } from "react-icons/ai";
 
 import Checkout from "@/components/Checkout";
 
-type OrdersResult = {
-  message: string;
-  orders: Order[];
-};
-
-const getOrders = async (): Promise<OrdersResult> => {
-  try {
-    const res: any = await fetch(`https://dine-market-rose.vercel.app/api/cart`, {
-      method: "GET",
-      // cache: "no-store",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (!res.ok) {
-      throw new Error("Failed to fetch the data");
-    }
-    const result: OrdersResult = await res.json();
-    return result;
-  } catch (err) {
-    console.log({ err });
-    throw err;
-  }
-};
-
 const Page = async () => {
-  const result = await getOrders();
-  // const { updateItems } = useCartItems();
-  const { orders } = result;
-  const totalProducts = orders.length;
+  // const { orders } = result;
+  // const totalProducts = orders.length;
+  // const subTotal: number = orders.reduce(function (acc, obj) {
+  //   return acc + obj.price;
+  // }, 0);
 
-  // updateItems(totalProducts);
-  const subTotal: number = orders.reduce(function (acc, obj) {
-    return acc + obj.price;
-  }, 0);
+  const subTotal = 5000;
+  const totalProducts = 0;
 
   return (
     <Container>
@@ -65,7 +39,7 @@ const Page = async () => {
             <h2 className="text-[#000000] font-bold text-2xl">Shopping Cart</h2>
             <div className="flex flex-col lg:flex-row gap-8 sm:gap-16">
               <div className="flex-1 mt-8 flex flex-col gap-8 xl:gap-16">
-                {orders?.map(({ id, name, type, price, imgSrc }) => (
+                {/* {orders?.map(({ id, name, type, price, imgSrc }) => (
                   <CartItem
                     key={id}
                     id={id}
@@ -74,7 +48,7 @@ const Page = async () => {
                     price={price}
                     imgSrc={imgSrc}
                   />
-                ))}
+                ))} */}
               </div>
               <div className="lg:max-w-xs w-full bg-[#fbfcff] flex flex-col gap-8 p-8">
                 <h1 className="text-[#000000] text-lg font-bold">
@@ -90,7 +64,7 @@ const Page = async () => {
                   <p>Sub Total</p>
                   <p>${subTotal.toLocaleString()}</p>
                 </div>
-                <Checkout cart={orders} />
+                {/* <Checkout cart={orders} /> */}
               </div>
             </div>
           </div>
