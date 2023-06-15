@@ -11,7 +11,7 @@ import { RootState } from "@/store";
 import { useSelector } from "react-redux";
 import type { TypedUseSelectorHook } from "react-redux";
 
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 const Page = async () => {
   const { items } = useAppSelector((state) => state.cart);
