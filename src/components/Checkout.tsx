@@ -5,12 +5,11 @@ import { loadStripe } from "@stripe/stripe-js";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 
-interface CheckoutProps {
-  cart: Order[];
-}
+// interface CheckoutProps {
+//   cart: Order[];
+// }
 
-const Checkout: React.FC<CheckoutProps> = ({ cart }) => {
-  // console.log(cart);
+const Checkout = () => {
   const stripePromise = loadStripe(
     "pk_test_51IXMPtJlp1xXjdUASLsxo8GeJLOZUdvwo1fTBLGMUcBMZfNJYQ39pYNtsLHGG0uxUeqJn3u1TCBt82Lwr9567wt600saNOcjA2"
   );
@@ -23,15 +22,12 @@ const Checkout: React.FC<CheckoutProps> = ({ cart }) => {
       setIsLoading(true);
       const stripe = await stripePromise;
       // Create a Checkout Session.
-      const response: any = await fetch(
-        `https://dine-market-rose.vercel.app/api/checkout`,
-        {
-          method: "POST",
-          body: JSON.stringify({
-            name: "Checkout",
-          }),
-        }
-      );
+      const response: any = await fetch(`http://localhost:3000/api/checkout`, {
+        method: "POST",
+        body: JSON.stringify({
+          name: "Checkout",
+        }),
+      });
 
       // if (response.statusCode === 500) {
       //   console.error(response.message);

@@ -6,15 +6,25 @@ import { AiOutlineShopping as Bag } from "react-icons/ai";
 
 import Checkout from "@/components/Checkout";
 
-const Page = async () => {
-  // const { orders } = result;
-  // const totalProducts = orders.length;
-  // const subTotal: number = orders.reduce(function (acc, obj) {
-  //   return acc + obj.price;
-  // }, 0);
+import { RootState } from "@/store";
 
-  const subTotal = 5000;
-  const totalProducts = 0;
+import { useSelector } from "react-redux";
+import type { TypedUseSelectorHook } from "react-redux";
+
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+const Page = async () => {
+  const { items } = useAppSelector((state) => state.cart);
+
+  console.log(items);
+
+  // const { orders } = result;
+  const totalProducts = items.length;
+  const subTotal: number = items.reduce(function (acc, obj) {
+    return acc + obj.price;
+  }, 0);
+
+  // const subTotal = 5000;
 
   return (
     <Container>
@@ -39,16 +49,16 @@ const Page = async () => {
             <h2 className="text-[#000000] font-bold text-2xl">Shopping Cart</h2>
             <div className="flex flex-col lg:flex-row gap-8 sm:gap-16">
               <div className="flex-1 mt-8 flex flex-col gap-8 xl:gap-16">
-                {/* {orders?.map(({ id, name, type, price, imgSrc }) => (
+                {items?.map(({ _id, name, type, price, imgSrc }, index) => (
                   <CartItem
-                    key={id}
-                    id={id}
+                    key={_id}
+                    id={index}
                     name={name}
                     type={type}
                     price={price}
                     imgSrc={imgSrc}
                   />
-                ))} */}
+                ))}
               </div>
               <div className="lg:max-w-xs w-full bg-[#fbfcff] flex flex-col gap-8 p-8">
                 <h1 className="text-[#000000] text-lg font-bold">
@@ -64,7 +74,7 @@ const Page = async () => {
                   <p>Sub Total</p>
                   <p>${subTotal.toLocaleString()}</p>
                 </div>
-                {/* <Checkout cart={orders} /> */}
+                <Checkout />
               </div>
             </div>
           </div>

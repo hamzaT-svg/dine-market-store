@@ -2,16 +2,16 @@
 import { AppDispatch } from "@/store";
 import { useDispatch } from "react-redux";
 import { CgShoppingCart as Cart } from "react-icons/cg";
-import { updateCart } from "@/store/slices/cartSlice";
+import { CartItem, addToCart } from "@/store/slices/cartSlice";
 import { toast } from "react-hot-toast";
 
 export const useAppDispatch: () => AppDispatch = useDispatch;
 
-const AddToCart = () => {
+const AddToCart: React.FC<CartItem> = ({ _id, name, type, price, imgSrc }) => {
   const dispatch = useAppDispatch();
 
   const handleAddToCart = () => {
-    dispatch(updateCart(["1", "2", "3", "4"]));
+    dispatch(addToCart({ _id, name, type, price, imgSrc }));
     toast.success("Item Added to Cart");
   };
 
