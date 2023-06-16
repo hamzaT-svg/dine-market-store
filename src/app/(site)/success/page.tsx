@@ -1,9 +1,15 @@
 "use client";
 import Container from "@/components/layout/Container";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useEffect } from "react";
+
+import { toast } from "react-hot-toast";
 
 const Page = () => {
+  useEffect(() => {
+    toast.success("Your Order Has Been Placed");
+  }, []);
+
   return (
     <Container>
       <div className="flex items-end justify-center">

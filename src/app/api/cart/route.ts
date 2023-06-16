@@ -15,22 +15,12 @@ export async function GET(request: NextRequest) {
 
 
 export async function POST(request: NextRequest) {
-    const body: NewOrder = await request.json();
-    const { id, name, type, price, imgSrc } = body;
+    const body: NewOrder[] = await request.json();
     try {
-        if (name && type && price && imgSrc) {
-            const order = await db.insert(orders).values({
-                id,
-                name,
-                type,
-                price,
-                imgSrc
-            }).returning();
-            return NextResponse.json({ message: "Data added successfully", order });
-        } else {
-            throw new Error("All fields are required");
 
-        }
+        const newOrders = await db.insert(orders).values(body);
+        return NextResponse.json({ message: "Data added successfully", newOrders });
+
     } catch (error) {
         return NextResponse.json({ message: (error as { message: string; }).message });
     }
