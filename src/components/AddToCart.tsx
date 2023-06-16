@@ -13,7 +13,13 @@ const AddToCart: React.FC<Order> = ({ id, name, type, price, imgSrc }) => {
 
   const handleAddToCart = () => {
     dispatch(
-      addToCart({ id: `${id}${new Date()}`, name, type, price, imgSrc })
+      addToCart({
+        id: `${id}${new Date().getTime()}`,
+        name,
+        type,
+        price,
+        imgSrc,
+      })
     );
     toast.success("Item Added to Cart");
   };

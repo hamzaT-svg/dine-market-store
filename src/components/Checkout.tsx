@@ -20,30 +20,35 @@ const Checkout = () => {
   const handleSubmit = async () => {
     try {
       setIsLoading(true);
-      const stripe = await stripePromise;
-      // Create a Checkout Session.
-      const stripeResponse: any = await fetch(
-        `https://dine-market-hamza-tasadaq.vercel.app/api/checkout`,
-        {
-          method: "POST",
-          body: JSON.stringify(items),
-        }
-      );
+      // const stripe = await stripePromise;
+      // // Create a Checkout Session.
+      // const stripeResponse: any = await fetch(
+      //   `https://dinemarket-hamza-tasadaq.vercel.app/api/checkout`,
+      //   {
+      //     method: "POST",
+      //     body: JSON.stringify(items),
+      //   }
+      // );
 
       // if (stripeResponse.statusCode === 500) {
       //   console.error(stripeResponse.message);
       //   return;
       // }
 
-      const { session } = await stripeResponse.json();
+      // const { session } = await stripeResponse.json();
 
-      await fetch(`https://dine-market-hamza-tasadaq.vercel.app/api/cart`, {
-        method: "POST",
-        body: JSON.stringify(items),
-      });
+      const re = await fetch(
+        `https://dinemarket-hamza-tasadaq.vercel.app/api/cart`,
+        {
+          method: "POST",
+          body: JSON.stringify({ items }),
+        }
+      );
+      console.log(re);
 
-      await stripe?.redirectToCheckout({ sessionId: session?.id });
+      // await stripe?.redirectToCheckout({ sessionId: session?.id });
     } catch (err) {
+      console.log(err);
       toast.error("Some Thing Wrong!");
     } finally {
       setIsLoading(false);

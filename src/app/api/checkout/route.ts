@@ -28,8 +28,8 @@ export async function POST(request: NextRequest) {
                 quantity: 1
             })
             ),
-            success_url: `https://dine-market-hamza-tasadaq.vercel.app/success`,
-            cancel_url: `https://dine-market-hamza-tasadaq.vercel.app/canceled`,
+            success_url: `https://dinemarket-hamza-tasadaq.vercel.app/success`,
+            cancel_url: `https://dinemarket-hamza-tasadaq.vercel.app/canceled`,
         };
         const session: Stripe.Checkout.Session = await stripe.checkout.sessions.create(
             params

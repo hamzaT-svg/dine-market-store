@@ -3222,7 +3222,7 @@ drizzle-kit@^0.18.1:
     minimatch "^7.4.3"
     zod "^3.20.2"
 
-drizzle-orm@^0.26.1:
+drizzle-orm@^0.26.5:
   version "0.26.5"
   resolved "https://registry.yarnpkg.com/drizzle-orm/-/drizzle-orm-0.26.5.tgz#cf0024e5a83134eb762b20c76f7c55b49bc6c73e"
   integrity sha512-ajjbOIoXqldWoWBn0RbVQCCT732R4Ad+gUjUrlmMpzWYwgnbG/qqPy84NhHntQ/MR//z3xfvT1Z2fD8uCAPX3g==

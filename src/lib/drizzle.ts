@@ -7,8 +7,8 @@ import {
 import { InferModel } from "drizzle-orm";
 
 import { sql } from "@vercel/postgres";
-import { migrate } from 'drizzle-orm/node-postgres/migrator';
 import { drizzle } from "drizzle-orm/vercel-postgres";
+import { migrate } from 'drizzle-orm/node-postgres/migrator';
 
 export const orders = pgTable("orders", {
     id: text("id").primaryKey(),
@@ -24,4 +24,4 @@ export type NewOrder = InferModel<typeof orders, "insert">;
 export const db = drizzle(sql);
 
 
-migrate(db, { migrationsFolder: './drizzle' });
+// migrate(db, { migrationsFolder: './drizzle' });

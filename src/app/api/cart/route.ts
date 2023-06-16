@@ -15,13 +15,13 @@ export async function GET(request: NextRequest) {
 
 
 export async function POST(request: NextRequest) {
-    const body: NewOrder[] = await request.json();
     try {
-
-        const newOrders = await db.insert(orders).values(body);
-        return NextResponse.json({ message: "Data added successfully", newOrders });
-
+        const { items }: { items: NewOrder[]; } = await request.json();
+        // console.log(items);
+        await db.insert(orders).values(items);
+        return NextResponse.json({ message: "Data added successfully" });
     } catch (error) {
+        console.log(error);
         return NextResponse.json({ message: (error as { message: string; }).message });
     }
 }
