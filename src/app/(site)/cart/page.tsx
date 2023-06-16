@@ -16,8 +16,6 @@ const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 const Page = async () => {
   const { items } = useAppSelector((state) => state.cart);
 
-  console.log(items);
-
   // const { orders } = result;
   const totalProducts = items.length;
   const subTotal: number = items.reduce(function (acc, obj) {

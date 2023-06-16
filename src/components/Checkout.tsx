@@ -1,33 +1,34 @@
 "use client";
-
-import { Order } from "@/lib/drizzle";
 import { loadStripe } from "@stripe/stripe-js";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 
-// interface CheckoutProps {
-//   cart: Order[];
-// }
+import { RootState } from "@/store";
+
+import { useSelector } from "react-redux";
+import type { TypedUseSelectorHook } from "react-redux";
+
+const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 const Checkout = () => {
+  const { items } = useAppSelector((state) => state.cart);
   const stripePromise = loadStripe(
     "pk_test_51IXMPtJlp1xXjdUASLsxo8GeJLOZUdvwo1fTBLGMUcBMZfNJYQ39pYNtsLHGG0uxUeqJn3u1TCBt82Lwr9567wt600saNOcjA2"
   );
 
   const [isLoading, setIsLoading] = useState(false);
   const handleSubmit = async () => {
-    // e.preventDefault();
-
     try {
       setIsLoading(true);
       const stripe = await stripePromise;
       // Create a Checkout Session.
-      const response: any = await fetch(`http://localhost:3000/api/checkout`, {
-        method: "POST",
-        body: JSON.stringify({
-          name: "Checkout",
-        }),
-      });
+      const response: any = await fetch(
+        `https://dine-market-hamza-tasadaq.vercel.app/api/checkout`,
+        {
+          method: "POST",
+          body: JSON.stringify(items),
+        }
+      );
 
       // if (response.statusCode === 500) {
       //   console.error(response.message);
