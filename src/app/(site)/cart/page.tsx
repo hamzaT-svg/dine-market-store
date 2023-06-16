@@ -49,10 +49,10 @@ const Page = async () => {
             <h2 className="text-[#000000] font-bold text-2xl">Shopping Cart</h2>
             <div className="flex flex-col lg:flex-row gap-8 sm:gap-16">
               <div className="flex-1 mt-8 flex flex-col gap-8 xl:gap-16">
-                {items?.map(({ _id, name, type, price, imgSrc }, index) => (
+                {items?.map(({ id, name, type, price, imgSrc }) => (
                   <CartItem
-                    key={_id}
-                    id={index}
+                    key={id}
+                    id={id}
                     name={name}
                     type={type}
                     price={price}

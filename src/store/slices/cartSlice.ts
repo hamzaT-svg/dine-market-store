@@ -1,18 +1,10 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { ProductDetail } from "../../../types";
-
-export type CartItem = {
-    _id: string,
-    name: string,
-    type: string,
-    price: number,
-    imgSrc: string,
-};
+import { Order } from "@/lib/drizzle";
 
 
 export interface cartState {
-    items: CartItem[];
+    items: Order[];
 }
 
 const initialState: cartState = {
@@ -23,7 +15,7 @@ const cartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
-        addToCart: (state, action: PayloadAction<CartItem>) => {
+        addToCart: (state, action: PayloadAction<Order>) => {
             state.items = [...state.items, action.payload];
         },
         deleteFromCart: (state, action: PayloadAction<{ _id: string; }>) => {

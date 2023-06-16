@@ -1508,12 +1508,12 @@
   resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.4.0.tgz#08d6c5e20cf7e4cc02fd181c4b0c225cd31dbb60"
   integrity sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==
 
-"@neondatabase/serverless@0.4.3":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@neondatabase/serverless/-/serverless-0.4.3.tgz#e664d351c9c5a372b0adc839368e99f1d08d3f05"
-  integrity sha512-U8tpuF5f0R5WRsciR7iaJ5S2h54DWa6Z6CEW+J4KgwyvRN3q3qDz0MibdfFXU0WqnRoi/9RSf/2XN4TfeaOCbQ==
+"@neondatabase/serverless@0.4.11":
+  version "0.4.11"
+  resolved "https://registry.yarnpkg.com/@neondatabase/serverless/-/serverless-0.4.11.tgz#25a3d20342480ade1c8ab2b64c65d247af1c7ae7"
+  integrity sha512-giqda7y/PZz0htUzt2jhDuAj1zeECf2CvAY6Nv1AvnYPqSzXCLQczeQ0Zqw/fPRPt7MPgD8qkNLQJ123bYh+eg==
   dependencies:
-    "@types/pg" "^8.6.6"
+    "@types/pg" "8.6.6"
 
 "@next/env@13.4.3":
   version "13.4.3"
@@ -2042,7 +2042,16 @@
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.1.tgz#d3357479a0fdfdd5907fe67e17e0a85c906e1301"
   integrity sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==
 
-"@types/pg@^8.10.1", "@types/pg@^8.6.6":
+"@types/pg@8.6.6":
+  version "8.6.6"
+  resolved "https://registry.yarnpkg.com/@types/pg/-/pg-8.6.6.tgz#21cdf873a3e345a6e78f394677e3b3b1b543cb80"
+  integrity sha512-O2xNmXebtwVekJDD+02udOncjVcMZQuTEQEMpKJ0ZRf5E7/9JJX3izhKUcUifBkyKpljyUM6BTgy2trmviKlpw==
+  dependencies:
+    "@types/node" "*"
+    pg-protocol "*"
+    pg-types "^2.2.0"
+
+"@types/pg@^8.10.1":
   version "8.10.1"
   resolved "https://registry.yarnpkg.com/@types/pg/-/pg-8.10.1.tgz#abdeb37983c1ad96d9eb8fc47e444cbe4711ec89"
   integrity sha512-AmEHA/XxMxemQom5iDwP62FYNkv+gDDnetRG7v2N2dPtju7UKI7FknUimcZo7SodKTHtckYPzaTqUEvUKbVJEA==
@@ -2205,12 +2214,12 @@
     minimatch "3.1.2"
     semver "6.1.1"
 
-"@vercel/postgres@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@vercel/postgres/-/postgres-0.3.0.tgz#f2395ce7a3f27ecf33a03b8daadd5583d7949064"
-  integrity sha512-cOC+x6qMnN54B4y0Fh0DV5LJQp2M7puIKbehQBMutY/8/zpzh+oKaQmnZb2QHn489MGOQKyRLJLgHa2P8M085Q==
+"@vercel/postgres@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@vercel/postgres/-/postgres-0.3.1.tgz#9366efe11c827ad657dd81c02d39e253936a00ab"
+  integrity sha512-1rc17XiYKzcPd+E43nn5BRRBQbt///Fvd1Vb48WeozZ5XD4K6c2tk4u43fGVRftJoc3+UHdGuBOE+sVo+wd6qw==
   dependencies:
-    "@neondatabase/serverless" "0.4.3"
+    "@neondatabase/serverless" "0.4.11"
     bufferutil "4.0.7"
     utf-8-validate "6.0.3"
     ws "8.13.0"
@@ -5789,7 +5798,7 @@ pg-protocol@*, pg-protocol@^1.6.0:
   resolved "https://registry.yarnpkg.com/pg-protocol/-/pg-protocol-1.6.0.tgz#4c91613c0315349363af2084608db843502f8833"
   integrity sha512-M+PDm637OY5WM307051+bsDia5Xej6d9IR4GwJse1qA1DIhiKlksvrneZOYQq42OM+spubpcNYEo2FcKQrDk+Q==
 
-pg-types@^2.1.0:
+pg-types@^2.1.0, pg-types@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/pg-types/-/pg-types-2.2.0.tgz#2d0250d636454f7cfa3b6ae0382fdfa8063254a3"
   integrity sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==

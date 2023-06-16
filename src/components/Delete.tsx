@@ -2,7 +2,7 @@
 import { MdDeleteOutline as DeleteButton } from "react-icons/md";
 
 interface DeleteProps {
-  id: number;
+  id: string;
 }
 
 const Delete: React.FC<DeleteProps> = ({ id }) => {

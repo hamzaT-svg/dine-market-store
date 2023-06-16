@@ -4,6 +4,7 @@ import { getProduct, getSlugs } from "../../../../../sanity/sanity-utils";
 
 import { PortableText } from "@portabletext/react";
 import AddToCart from "@/components/AddToCart";
+import { count } from "console";
 
 export async function generateStaticParams() {
   const slugs = await getSlugs("product");
@@ -79,7 +80,8 @@ const ProductDetailsProps = async ({
 
               <div className="flex items-center w-full space-x-3">
                 <AddToCart
-                  _id={_id}
+                  // count={count}
+                  id={_id}
                   name={name}
                   type={type}
                   price={price}

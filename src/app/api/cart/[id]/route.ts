@@ -1,4 +1,4 @@
-import { carts, db } from "@/lib/drizzle";
+import { orders, db } from "@/lib/drizzle";
 import { eq } from "drizzle-orm";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -11,7 +11,7 @@ export async function DELETE(request: NextRequest, { params }: {
     const { id } = params;
 
     try {
-        const deletedOrder = await db.delete(carts).where(eq(carts.id, parseInt(id))).returning();
+        const deletedOrder = await db.delete(orders).where(eq(orders.id, id)).returning();
 
         return NextResponse.json({ deletedOrder });
     } catch (error) {

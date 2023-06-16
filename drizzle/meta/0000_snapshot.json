@@ -1,16 +1,16 @@
 {
   "version": "5",
   "dialect": "pg",
-  "id": "25442131-744c-4cfb-a16e-587e86c3bd16",
+  "id": "3795a669-fae4-4dc0-a2ed-33fe4c02115f",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
-    "carts": {
-      "name": "carts",
+    "orders": {
+      "name": "orders",
       "schema": "",
       "columns": {
         "id": {
           "name": "id",
-          "type": "serial",
+          "type": "text",
           "primaryKey": true,
           "notNull": true
         },
