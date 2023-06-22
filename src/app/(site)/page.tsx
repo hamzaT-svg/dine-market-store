@@ -2,6 +2,7 @@ import { CgShoppingCart as Cart } from "react-icons/cg";
 import Carousel from "@/components/Carousel";
 import Container from "@/components/layout/Container";
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function Home() {
   return (
@@ -26,10 +27,13 @@ export default async function Home() {
                     Anyone can beat you but no one can beat your outfit as long
                     as you wear Dine outfits.
                   </h4>
-                  <button className="bg-[#212121] text-[#FFFFFF] flex items-center space-x-2 py-4 px-8 font-semibold text-base">
+                  <Link
+                    href={"/products"}
+                    className="bg-[#212121] text-[#FFFFFF] flex items-center space-x-2 py-4 px-8 font-semibold text-base"
+                  >
                     <Cart style={{ fontSize: "1.3rem", color: "#FFFFFF" }} />
                     <span>Start Shopping</span>
-                  </button>
+                  </Link>
                 </div>
                 <ul className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-10  w-full">
                   <div>

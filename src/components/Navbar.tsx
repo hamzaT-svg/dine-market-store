@@ -5,7 +5,7 @@ import { getCategories } from "../../sanity/sanity-utils";
 const Navbar = () => {
   const categories = use(getCategories());
   return (
-    <ul className="flex items-center justify-between gap-4 xl:gap-12">
+    <ul className="flex lg:flex-row flex-col items-center justify-between gap-4 xl:gap-12">
       {categories?.map((category) => (
         <Link href={category.slug} key={category._id} className="text-lg">
           {category.name}
